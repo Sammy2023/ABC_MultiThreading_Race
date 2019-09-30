@@ -1,0 +1,28 @@
+
+/**
+ * ABC_MultiThreading_Race: Have 3 Letters, A B C, race to get across the screen.
+ *    They will all finish, but we will see who finishes first!
+
+ */
+public class ABC_MultiThreading_Race
+{
+   public static void main()
+   {
+   int winSteps = 10;
+       Runnable letterA  = new Letter("A",winSteps);  
+       Runnable letterB  = new Letter("B",winSteps);
+       Runnable letterC  = new Letter("C",winSteps);   
+       
+        Thread threadA = new Thread(letterA);
+        Thread threadB = new Thread(letterB);
+        Thread threadC = new Thread(letterC);    
+    
+        threadA.start();
+        threadB.start();
+        threadC.start();        
+       
+   } // main
+
+}  // ABC_MultiThreading_Race
+
+
